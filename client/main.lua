@@ -15,9 +15,7 @@ end
 local function drawPlayerNumbers()
     CreateThread(function()
         while scoreboardOpen do
-            local players = cache('nearbyPlayers', function()
-                return lib.getNearbyPlayers(GetEntityCoords(cache.ped), 10, true)
-            end, 1000)
+            local players = lib.getNearbyPlayers(GetEntityCoords(cache.ped), 10, true)
             for i = 1, #players do
                 local player = players[i]
                 local serverId = GetPlayerServerId(player.id)
